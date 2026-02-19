@@ -1,0 +1,66 @@
+{
+  "navbar.item.label.Docs": {
+    "message": "文档",
+    "description": "Navbar item label for Docs"
+  },
+  "navbar.item.label.Blog": {
+    "message": "博客",
+    "description": "Navbar item label for Blog"
+  },
+  "footer.link.title.Product": {
+    "message": "产品",
+    "description": "Footer link title for Product"
+  },
+  "footer.link.title.Resources": {
+    "message": "资源",
+    "description": "Footer link title for Resources"
+  },
+  "footer.link.title.Community": {
+    "message": "社区",
+    "description": "Footer link title for Community"
+  },
+  "footer.link.title.Support": {
+    "message": "支持",
+    "description": "Footer link title for Support"
+  },
+  "footer.link.Features": {
+    "message": "功能特性",
+    "description": "Footer link for Features"
+  },
+  "footer.link.Advantages": {
+    "message": "技术优势",
+    "description": "Footer link for Advantages"
+  },
+  "footer.link.Scenarios": {
+    "message": "应用场景",
+    "description": "Footer link for Scenarios"
+  },
+  "footer.link.Quick Start": {
+    "message": "快速开始",
+    "description": "Footer link for Quick Start"
+  },
+  "footer.link.API Docs": {
+    "message": "API 文档",
+    "description": "Footer link for API Docs"
+  },
+  "footer.link.Development": {
+    "message": "开发指南",
+    "description": "Footer link for Development"
+  },
+  "footer.link.Blog": {
+    "message": "博客",
+    "description": "Footer link for Blog"
+  },
+  "footer.link.FAQ": {
+    "message": "常见问题",
+    "description": "Footer link for FAQ"
+  },
+  "footer.link.Contact Us": {
+    "message": "联系我们",
+    "description": "Footer link for Contact Us"
+  },
+  "footer.copyright": {
+    "message": "版权所有 © {year} MesaLogo. 保留所有权利。",
+    "description": "Footer copyright"
+  }
+}
