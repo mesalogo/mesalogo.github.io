@@ -210,12 +210,12 @@ function HomepageShowcase() {
     {
       title: 'Entity Application Marketplace',
       description: 'Built-in applications like NetLogo modeling, GIS maps, Code servers. Quickly transform entity applications into agent-based solutions.',
-      image: '/img/slide2.png',
+      image: '/img/slide3.png',
     },
     {
       title: 'Universal Knowledge Base',
       description: 'Built-in LightRAG/GraphRAG/Graphiti graph knowledge base, compatible with FastGPT/Dify/RagFlow external platforms.',
-      image: '/img/slide3.png',
+      image: '/img/slide2.png',
     },
     {
       title: 'Dual-Engine Rule System',
