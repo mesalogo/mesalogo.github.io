@@ -56,7 +56,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/mesalogo/abm-llm-v2/tree/main/website/',
+            'https://github.com/mesalogo/mesalogo.github.io/tree/main/website/',
         },
         blog: {
           showReadingTime: true,
@@ -67,7 +67,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/mesalogo/abm-llm-v2/tree/main/website/',
+            'https://github.com/mesalogo/mesalogo.github.io/tree/main/website/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -109,7 +109,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/mesalogo/abm-llm-v2',
+          href: 'https://github.com/mesalogo/mesalogo.github.io',
           label: 'GitHub',
           position: 'right',
         },
@@ -161,7 +161,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/mesalogo/abm-llm-v2',
+              href: 'https://github.com/mesalogo/mesalogo.github.io',
             },
           ],
         },
