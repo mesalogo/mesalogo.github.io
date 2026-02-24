@@ -101,6 +101,7 @@ const config: Config = {
           label: 'Docs',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/download', label: 'Download', position: 'left'},
         {
           type: 'localeDropdown',
           position: 'right',
