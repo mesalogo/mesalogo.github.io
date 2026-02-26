@@ -146,33 +146,33 @@ function HomepageFeatures() {
   const features = [
     {
       icon: '🤖',
-      title: 'Multi-Agent Orchestration',
-      description: 'Visual workflow editor with ReactFlow. Define agent collaboration using drag-and-drop nodes: agents, conditions, parallel, and loops.',
+      title: 'Visual Multi-Agent Workflows',
+      description: 'Build complex MoE architectures and collaborative working groups instantly through intuitive drag-and-drop, drastically lowering development barriers.',
     },
     {
       icon: '🔧',
-      title: 'MCP Tool Ecosystem',
-      description: 'Extensible plugin system enabling agents to interact with external systems — NetLogo, GIS, code servers, and more.',
+      title: 'Bridge Virtual and Physical',
+      description: 'Break free from text-only chat. Deeply integrate with professional tools like NetLogo, GIS, and Code Servers via our extensible MCP ecosystem to perform real-world actions.',
     },
     {
-      icon: '📚',
-      title: 'Knowledge Graph Memory',
-      description: 'Built-in LightRAG/GraphRAG/Graphiti knowledge bases with time-sensitive memory. Compatible with Dify, FastGPT, RagFlow.',
+      icon: '🧠',
+      title: 'Deep Memory with GraphRAG',
+      description: 'Equip agents with superior contextual awareness using time-sensitive LightRAG and Graphiti, enabling complex multi-hop reasoning that standard vector databases cannot achieve.',
     },
     {
       icon: '🛡️',
-      title: 'Supervisor Mechanism',
-      description: 'Automated behavior monitoring, anomaly detection, and dynamic intervention to ensure simulation quality and safety.',
+      title: 'Enterprise-Grade Control',
+      description: 'Mitigate AI hallucinations out-of-the-box. Our innate Supervisor mechanism automatically monitors behavior and enforces safety boundaries in real-time.',
     },
     {
       icon: '⚖️',
-      title: 'Dual-Engine Rules',
-      description: 'Combines natural language and logic rule engines for both complex semantic understanding and precise computation.',
+      title: 'Deterministic & Flexible Logic',
+      description: 'Get the best of both worlds—combine the unbounded semantic understanding of LLMs with the precise, reliable computation of strict logic rules.',
     },
     {
       icon: '🧪',
-      title: 'Parallel Laboratory',
-      description: 'Run controlled experiments with variable combinations to discover optimal strategies and reduce LLM unpredictability.',
+      title: 'Risk-Free Strategy Simulation',
+      description: 'Discover optimal decisions by running fast parallel experiments across variable combinations, eliminating the unpredictability and cost of trial-and-error in production.',
     },
   ];
 

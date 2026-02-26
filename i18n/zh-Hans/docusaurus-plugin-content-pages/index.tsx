@@ -146,33 +146,33 @@ function HomepageFeatures() {
   const features = [
     {
       icon: '🤖',
-      title: '多智能体编排',
-      description: '基于 ReactFlow 的可视化工作流编辑器，通过拖拽节点定义智能体协作：智能体、条件、并行、循环。',
+      title: '开箱即用的多智能体联邦',
+      description: '无需繁琐硬编码，通过可视化拖拽即可构建复杂的专家混合（MoE）路由与智能体协同工作流，极大降低开发门槛。',
     },
     {
       icon: '🔧',
-      title: 'MCP 工具生态',
-      description: '可扩展的插件系统，使智能体能与外部系统交互 — NetLogo、GIS、代码服务器等。',
+      title: '打破虚拟与现实的边界',
+      description: '超越纯文本对话限制。通过扩展生态深度对接 NetLogo、GIS 与代码服务器，让大模型在真实场景中具备强大的执行力。',
     },
     {
-      icon: '📚',
-      title: '知识图谱记忆',
-      description: '内置 LightRAG/GraphRAG/Graphiti 知识库，支持时间敏感记忆。兼容 Dify、FastGPT、RagFlow。',
+      icon: '🧠',
+      title: '具备深度推理的图谱大脑',
+      description: '内置先进的 LightRAG 与 Graphiti，提供比传统向量检索更精准的多跳推理与时间感知记忆，让系统越用越聪明。',
     },
     {
       icon: '🛡️',
-      title: '监督者机制',
-      description: '自动化行为监控、异常检测和动态干预，确保仿真质量和安全性。',
+      title: '企业级的安全与可控机制',
+      description: '自带防内鬼与防幻觉机制。自动化监督者全程监控智能体行为与合规性，为关键业务的稳定运行保驾护航。',
     },
     {
       icon: '⚖️',
-      title: '双引擎规则',
-      description: '结合自然语言和逻辑规则引擎，兼顾复杂语义理解和精确计算。',
+      title: '泛化与精确的完美平衡',
+      description: '创新性地将大语言模型的泛化语义理解能力，与传统逻辑规则引擎的精确计算能力相融合，确保系统灵活且绝对可靠。',
     },
     {
       icon: '🧪',
-      title: '平行实验室',
-      description: '通过控制变量实验发现最优策略，降低大模型不可预测性带来的风险。',
+      title: '零成本的策略推演与择优',
+      description: '无需在真实业务中冒险，通过一键展开平行对比实验，在受控沙箱中快速筛选出最佳变量与规则组合。',
     },
   ];
 
