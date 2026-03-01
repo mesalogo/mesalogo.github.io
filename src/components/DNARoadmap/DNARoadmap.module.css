@@ -1,0 +1,461 @@
+.dnaRoadmap {
+  padding: 2rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.sectionSubtitle {
+  color: var(--ifm-color-primary-light);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.dnaRoadmap h2 {
+  position: relative;
+  display: inline-block;
+  animation: fadeInUp 0.8s ease-out;
+  font-weight: 800;
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+.dnaRoadmap h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--ifm-color-primary), var(--ifm-color-secondary), transparent);
+  border-radius: 2px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Diagonal helix container */
+.helixContainer {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 700px;
+}
+
+/* SVG helix background */
+.helixSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.helixStrand {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.strandA {
+  stroke: url(#strandGradientA);
+  filter: drop-shadow(0 0 6px rgba(139, 92, 246, 0.5));
+}
+
+.strandB {
+  stroke: url(#strandGradientB);
+  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.5));
+}
+
+.helixBridge {
+  stroke: rgba(139, 92, 246, 0.15);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+/* Milestone positioned absolutely along the diagonal */
+.milestoneItem {
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%, 50%);
+}
+
+/* Node */
+.helixNode {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.nodeCore {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background: var(--ifm-background-surface-color);
+  border: 2px solid rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.nodeCore:hover {
+  transform: scale(1.2);
+}
+
+.nodeCompleted .nodeCore {
+  border-color: #22c55e;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.4), 0 0 40px rgba(34, 197, 94, 0.1);
+}
+
+.nodeInProgress .nodeCore {
+  border-color: #f59e0b;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4), 0 0 40px rgba(245, 158, 11, 0.1);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.nodeFuture .nodeCore {
+  border-color: rgba(139, 92, 246, 0.3);
+  border-style: dashed;
+  opacity: 0.7;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.4), 0 0 40px rgba(245, 158, 11, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.6), 0 0 60px rgba(245, 158, 11, 0.2);
+  }
+}
+
+.nodeRing {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  animation: ringExpand 3s ease-out infinite;
+}
+
+@keyframes ringExpand {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Card wrapper: positioned left or right of the node */
+.cardWrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  width: 240px;
+}
+
+.cardRight {
+  left: 100%;
+  margin-left: 8px;
+  flex-direction: row;
+}
+
+.cardLeft {
+  right: 100%;
+  margin-right: 8px;
+  flex-direction: row-reverse;
+}
+
+.connectorArm {
+  width: 60px;
+  min-width: 60px;
+  height: 2px;
+  background: linear-gradient(to right, rgba(139, 92, 246, 0.5), transparent);
+}
+
+.cardLeft .connectorArm {
+  background: linear-gradient(to left, rgba(139, 92, 246, 0.5), transparent);
+}
+
+.nodeCompleted~.cardWrapper .connectorArm {
+  background: linear-gradient(to right, rgba(34, 197, 94, 0.5), transparent);
+}
+
+.nodeCompleted~.cardLeft .connectorArm {
+  background: linear-gradient(to left, rgba(34, 197, 94, 0.5), transparent);
+}
+
+.nodeInProgress~.cardWrapper .connectorArm {
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.5), transparent);
+}
+
+.nodeInProgress~.cardLeft .connectorArm {
+  background: linear-gradient(to left, rgba(245, 158, 11, 0.5), transparent);
+}
+
+/* Card */
+.milestoneCard {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.milestoneCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.cardCompleted {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.cardCompleted:hover {
+  border-color: rgba(34, 197, 94, 0.6);
+  box-shadow: 0 8px 30px rgba(34, 197, 94, 0.1);
+}
+
+.cardInProgress {
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.cardInProgress:hover {
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.1);
+}
+
+.cardFuture {
+  border-style: dashed;
+  opacity: 0.8;
+}
+
+.cardGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.6), transparent);
+}
+
+.cardCompleted .cardGlow {
+  background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.6), transparent);
+}
+
+.cardInProgress .cardGlow {
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.6), transparent);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.cardDate {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cardBadge {
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badgeCompleted {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.badgeInProgress {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.cardTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  margin: 0 0 0.4rem 0;
+}
+
+.cardItems {
+  margin: 0;
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.cardItems li {
+  font-size: 0.78rem;
+  color: var(--ifm-font-color-base);
+  line-height: 1.6;
+  position: relative;
+}
+
+.cardItems li::before {
+  content: '\25C8';
+  position: absolute;
+  left: -1rem;
+  color: var(--ifm-color-primary);
+  font-size: 0.55rem;
+  top: 0.25rem;
+}
+
+.cardCompleted .cardItems li::before {
+  color: #22c55e;
+}
+
+.cardInProgress .cardItems li::before {
+  color: #f59e0b;
+}
+
+/* Floating particles */
+.particleField {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.4);
+  animation: floatDiag linear infinite;
+}
+
+.particle:nth-child(2n) {
+  background: rgba(59, 130, 246, 0.3);
+}
+
+.particle:nth-child(3n) {
+  background: rgba(34, 197, 94, 0.3);
+}
+
+@keyframes floatDiag {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.8;
+  }
+
+  90% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translate(60px, -80px);
+    opacity: 0;
+  }
+}
+
+/* Responsive: stack vertically on mobile */
+@media (max-width: 768px) {
+  .helixContainer {
+    height: auto;
+    min-height: auto;
+  }
+
+  .helixSvg {
+    display: none;
+  }
+
+  .milestoneItem {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .cardWrapper {
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+    top: auto !important;
+    bottom: auto !important;
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .cardAbove {
+    bottom: auto;
+  }
+
+  .milestoneCard {
+    width: 100%;
+  }
+
+  .nodeCore {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+  .nodeInProgress .nodeCore,
+  .badgeInProgress,
+  .nodeRing,
+  .particle {
+    animation: none !important;
+  }
+
+  .milestoneCard:hover,
+  .nodeCore:hover {
+    transform: none;
+  }
+}

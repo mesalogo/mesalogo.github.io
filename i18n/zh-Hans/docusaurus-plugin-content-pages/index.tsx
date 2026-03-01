@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
 import styles from '@site/src/pages/index.module.css';
+import DNARoadmap from '@site/src/components/DNARoadmap';
 
 function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -199,148 +200,59 @@ function HomepageFeatures() {
   );
 }
 
-function HomepageShowcase() {
-  const showcases = [
-    {
-      title: '多智能体会话',
-      description: '以角色为核心适配大模型 MoE 架构，路由到明确的专家模块。兼容 OpenAI、Dify、FastGPT、Coze 等平台。',
-      image: '/img/slide1.png',
-    },
-    {
-      title: '实体应用市场',
-      description: '内置 NetLogo 建模、GIS 地图、Code 编程服务器等常见应用，快速将实体应用进行智能体化改造。',
-      image: '/img/slide2.png',
-    },
-    {
-      title: '全平台知识库兼容',
-      description: '内置基于 LightRAG/GraphRAG/Graphiti 图谱的知识库，兼容 FastGPT/Dify/RagFlow 等外部平台。',
-      image: '/img/slide3.png',
-    },
-    {
-      title: '双引擎规则系统',
-      description: '创新性结合自然语言规则引擎和逻辑规则引擎，确保系统既灵活又准确。',
-      image: '/img/slide4.png',
-    },
-    {
-      title: '监督者机制',
-      description: '内置监督者自动监控智能体行为、跟踪规则执行、检测异常，提供动态干预。',
-      image: '/img/slide5.png',
-    },
-    {
-      title: '平行实验室',
-      description: '通过控制变量实验找到最优变量和规则组合，降低大模型结果不可预测带来的机会成本。',
-      image: '/img/slide6.png',
-    },
-  ];
-
-  return (
-    <section className={styles.showcase}>
-      <div className="container">
-        <div className="text--center margin-bottom--lg">
-          <Heading as="h2">产品展示</Heading>
-          <p className={styles.sectionSubtitle}>MesaLogo 实际效果一览</p>
-        </div>
-        <div className={styles.showcaseGrid}>
-          {showcases.map((item, idx) => (
-            <div key={idx} className={styles.showcaseCard}>
-              <img src={item.image} alt={item.title} loading="lazy" />
-              <div className={styles.showcaseContent}>
-                <Heading as="h3">{item.title}</Heading>
-                <p>{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function TimelineMilestone({ date, title, description, icon, isLeft, completed }: {
-  date: string;
-  title: string;
-  description: string;
-  icon: string;
-  isLeft: boolean;
-  completed?: boolean;
-}) {
-  return (
-    <div className={clsx(styles.timelineItem, isLeft ? styles.timelineLeft : styles.timelineRight)}>
-      <div className={styles.timelineDate}>{date}</div>
-      <div className={clsx(styles.timelineDot, completed && styles.timelineDotCompleted)}></div>
-      <div className={clsx(styles.timelineContent, completed && styles.timelineContentCompleted)}>
-        {completed && <span className={styles.completedBadge}>已完成</span>}
-        <div className={styles.timelineIcon}>{icon}</div>
-        <Heading as="h3" className={styles.timelineTitle}>{title}</Heading>
-        <p className={styles.timelineDescription}>{description}</p>
-      </div>
-    </div>
-  );
-}
-
 function HomepageTimeline() {
   const milestones = [
     {
       date: '2025 Q1',
       title: '核心架构',
       icon: '🏗️',
-      description: '双引擎规则系统、行动空间管理和多智能体协作框架',
+      items: ['双引擎规则系统', '行动空间管理', '多智能体协作框架'],
       completed: true,
     },
     {
       date: '2025 Q2',
       title: '知识库集成',
       icon: '📚',
-      description: 'LightRAG、GraphRAG、Graphiti 知识库与时间敏感记忆系统',
+      items: ['LightRAG / GraphRAG / Graphiti', '时间敏感记忆系统'],
       completed: true,
     },
     {
       date: '2025 Q3',
-      title: 'MCP 工具系统',
+      title: '高级智能体系统',
       icon: '🔧',
-      description: 'MCP 插件系统，使智能体能与外部系统交互并执行实际操作',
+      items: ['MCP 工具与插件系统', '监督者机制', '平行实验室'],
       completed: true,
     },
     {
       date: '2025 Q4',
-      title: '监督者机制',
+      title: 'Skill 集成',
       icon: '🛡️',
-      description: '自动化监督者，用于行为监控、异常检测和动态干预',
+      items: ['模块化技能系统', '可复用智能体能力'],
       completed: true,
     },
     {
       date: '2026 Q1',
-      title: '平行实验室',
-      icon: '🧪',
-      description: '平行实验功能，支持控制变量测试和最优方案发现',
+      title: 'IM 集成',
+      icon: '💬',
+      items: ['即时通讯平台集成', '实时智能体交互'],
+      status: 'in-progress',
     },
     {
-      date: '2026 Q2',
-      title: '企业级功能',
-      icon: '🏢',
-      description: '多租户支持、OAuth 集成、增强安全性和企业级部署',
+      date: '2026 Q2+',
+      title: '更多实体集成',
+      icon: '🔗',
+      items: ['更广泛的实体类型支持', '扩展生态系统连接'],
     },
   ];
 
   return (
-    <section className={styles.timeline}>
-      <div className="container">
-        <div className="text--center margin-bottom--xl">
-          <Heading as="h2">发展路线图</Heading>
-          <p className={styles.sectionSubtitle}>持续创新与改进</p>
-        </div>
-        <div className={styles.timelineContainer}>
-          <div className={styles.timelineLine}></div>
-          {milestones.map((milestone, idx) => (
-            <TimelineMilestone
-              key={idx}
-              {...milestone}
-              isLeft={idx % 2 === 0}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+    <DNARoadmap
+      heading="发展路线图"
+      subtitle="持续创新与改进"
+      milestones={milestones}
+      completedLabel="已完成"
+      inProgressLabel="进行中"
+    />
   );
 }
 
@@ -382,7 +294,6 @@ export default function Home(): React.JSX.Element {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
-        <HomepageShowcase />
         <HomepageTimeline />
         <HomepageCTA />
       </main>

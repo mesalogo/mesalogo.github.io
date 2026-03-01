@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
+import DNARoadmap from '../components/DNARoadmap';
 
 function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -199,151 +200,57 @@ function HomepageFeatures() {
   );
 }
 
-function HomepageShowcase() {
-  const showcases = [
-    {
-      title: 'Multi-Agent Dialogue',
-      description: 'Role-based core design adapted to MoE architecture, routing to explicit expert modules. Compatible with OpenAI, Dify, FastGPT, Coze, etc.',
-      image: '/img/slide1.png',
-    },
-    {
-      title: 'Entity Application Marketplace',
-      description: 'Built-in applications like NetLogo modeling, GIS maps, Code servers. Quickly transform entity applications into agent-based solutions.',
-      image: '/img/slide2.png',
-    },
-    {
-      title: 'Universal Knowledge Base',
-      description: 'Built-in LightRAG/GraphRAG/Graphiti graph knowledge base, compatible with FastGPT/Dify/RagFlow external platforms.',
-      image: '/img/slide3.png',
-    },
-    {
-      title: 'Dual-Engine Rule System',
-      description: 'Innovative combination of natural language and logic rule engines for flexible and accurate system execution.',
-      image: '/img/slide4.png',
-    },
-    {
-      title: 'Supervisor Mechanism',
-      description: 'Built-in supervisor automatically monitors agent behavior, tracks rules, detects anomalies, and provides dynamic intervention.',
-      image: '/img/slide5.png',
-    },
-    {
-      title: 'Parallel Laboratory',
-      description: 'Find optimal variable and rule combinations through controlled experiments, reducing uncertainty from unpredictable LLM results.',
-      image: '/img/slide6.png',
-    },
-  ];
-
-  return (
-    <section className={styles.showcase}>
-      <div className="container">
-        <div className="text--center margin-bottom--lg">
-          <Heading as="h2">Product Showcase</Heading>
-          <p className={styles.sectionSubtitle}>See MesaLogo in action</p>
-        </div>
-        <div className={styles.showcaseGrid}>
-          {showcases.map((item, idx) => (
-            <div key={idx} className={styles.showcaseCard}>
-              <img src={item.image} alt={item.title} loading="lazy" />
-              <div className={styles.showcaseContent}>
-                <Heading as="h3">{item.title}</Heading>
-                <p>{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function TimelineMilestone({ date, title, description, icon, isLeft, completed, status }: {
-  date: string;
-  title: string;
-  description: string;
-  icon: string;
-  isLeft: boolean;
-  completed?: boolean;
-  status?: string;
-}) {
-  return (
-    <div className={clsx(styles.timelineItem, isLeft ? styles.timelineLeft : styles.timelineRight)}>
-      <div className={styles.timelineDate}>{date}</div>
-      <div className={clsx(styles.timelineDot, completed && styles.timelineDotCompleted, status === 'in-progress' && styles.timelineDotInProgress)}></div>
-      <div className={clsx(styles.timelineContent, completed && styles.timelineContentCompleted, status === 'in-progress' && styles.timelineContentInProgress)}>
-        {completed && <span className={styles.completedBadge}>Completed</span>}
-        {status === 'in-progress' && <span className={styles.inProgressBadge}>In Progress</span>}
-        <div className={styles.timelineIcon}>{icon}</div>
-        <Heading as="h3" className={styles.timelineTitle}>{title}</Heading>
-        <p className={styles.timelineDescription}>{description}</p>
-      </div>
-    </div>
-  );
-}
-
 function HomepageTimeline() {
   const milestones = [
     {
       date: '2025 Q1',
       title: 'Core Architecture',
       icon: '🏗️',
-      description: 'Dual-engine rule system, action space management, and multi-agent collaboration framework',
+      items: ['Dual-engine rule system', 'Action space management', 'Multi-agent collaboration framework'],
       completed: true,
     },
     {
       date: '2025 Q2',
       title: 'Knowledge Base Integration',
       icon: '📚',
-      description: 'LightRAG, GraphRAG, Graphiti knowledge bases with time-sensitive memory system',
+      items: ['LightRAG / GraphRAG / Graphiti', 'Time-sensitive memory system'],
       completed: true,
     },
     {
       date: '2025 Q3',
-      title: 'MCP Tool System',
+      title: 'Advanced Agent System',
       icon: '🔧',
-      description: 'MCP plugin system enabling agents to interact with external systems and execute real actions',
+      items: ['MCP tool & plugin system', 'Supervisor mechanism', 'Parallel laboratory'],
       completed: true,
     },
     {
       date: '2025 Q4',
-      title: 'Supervisor Mechanism',
+      title: 'Skill Integration',
       icon: '🛡️',
-      description: 'Automated supervisor for behavior monitoring, anomaly detection, and dynamic intervention',
+      items: ['Modular skill system', 'Reusable agent capabilities'],
       completed: true,
     },
     {
       date: '2026 Q1',
-      title: 'Parallel Laboratory',
-      icon: '🧪',
-      description: 'Parallel experiment feature for controlled variable testing and optimal solution discovery',
+      title: 'IM Integration',
+      icon: '💬',
+      items: ['Instant messaging platform integration', 'Real-time agent interaction'],
       status: 'in-progress',
     },
     {
-      date: '2026 Q2',
-      title: 'Enterprise Features',
-      icon: '🏢',
-      description: 'Multi-tenant support, OAuth integration, enhanced security, and enterprise-grade deployment',
+      date: '2026 Q2+',
+      title: 'More Entity Integration',
+      icon: '🔗',
+      items: ['Broader entity type support', 'Extended ecosystem connectivity'],
     },
   ];
 
   return (
-    <section className={styles.timeline}>
-      <div className="container">
-        <div className="text--center margin-bottom--xl">
-          <Heading as="h2">Development Roadmap</Heading>
-          <p className={styles.sectionSubtitle}>Continuous innovation and improvement</p>
-        </div>
-        <div className={styles.timelineContainer}>
-          <div className={styles.timelineLine}></div>
-          {milestones.map((milestone, idx) => (
-            <TimelineMilestone
-              key={idx}
-              {...milestone}
-              isLeft={idx % 2 === 0}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+    <DNARoadmap
+      heading="Development Roadmap"
+      subtitle="Continuous innovation and improvement"
+      milestones={milestones}
+    />
   );
 }
 
@@ -385,7 +292,6 @@ export default function Home(): React.JSX.Element {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
-        <HomepageShowcase />
         <HomepageTimeline />
         <HomepageCTA />
       </main>
