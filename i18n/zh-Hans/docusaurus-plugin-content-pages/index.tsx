@@ -238,7 +238,13 @@ function HomepageTimeline() {
       status: 'in-progress',
     },
     {
-      date: '2026 Q2+',
+      date: '2026 Q2',
+      title: 'ODM 组织设计模型',
+      icon: '🏛️',
+      items: ['基于组织架构的智能体调度模型', '可视化组织架构图编辑器', '预设模板（如三省六部制、现代公司架构）', '层级流转控制与审批路由'],
+    },
+    {
+      date: '2026 Q3+',
       title: '更多实体集成',
       icon: '🔗',
       items: ['更广泛的实体类型支持', '扩展生态系统连接'],

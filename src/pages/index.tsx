@@ -238,7 +238,13 @@ function HomepageTimeline() {
       status: 'in-progress',
     },
     {
-      date: '2026 Q2+',
+      date: '2026 Q2',
+      title: 'ODM Organization Model',
+      icon: '🏛️',
+      items: ['Organization Design Model for agent scheduling', 'Visual org-chart editor in action spaces', 'Pre-built templates (e.g. Three Departments & Six Ministries)', 'Hierarchical flow-control & approval routing'],
+    },
+    {
+      date: '2026 Q3+',
       title: 'More Entity Integration',
       icon: '🔗',
       items: ['Broader entity type support', 'Extended ecosystem connectivity'],
