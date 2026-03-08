@@ -241,7 +241,7 @@ function HomepageTimeline() {
       date: '2026 Q2',
       title: 'ODM Framework',
       icon: '🏛️',
-      items: ['Organization Design Model framework for agent scheduling', 'Visual org-chart editor with drag-and-drop', 'Pre-built government & enterprise templates', 'Runtime toggle for organization constraints in tasks'],
+      items: ['Multi-dimensional Organization Design Model (structure, topology, scheduling, collaboration)', 'Visual graph editors for org-structure & interaction topology', 'Pre-built ABM templates: governments, enterprises, classic topologies', 'Composable dimensions with per-task runtime toggles'],
     },
     {
       date: '2026 Q3+',
