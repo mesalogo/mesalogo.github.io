@@ -241,7 +241,7 @@ function HomepageTimeline() {
       date: '2026 Q2',
       title: 'ODM Framework',
       icon: '🏛️',
-      items: ['Multi-dimensional Organization Design Model (structure, topology, scheduling, collaboration)', 'Visual graph editors for org-structure & interaction topology', 'Pre-built ABM templates: governments, enterprises, classic topologies', 'Composable dimensions with per-task runtime toggles'],
+      items: ['ABM-standard Organization Design Model with 4 composable dimensions', 'Visual org-chart editor with slot-based role binding', 'Pre-built model templates: Three Departments, State Council, Separation of Powers, Corporate, Debate', 'One-click template → bind roles → run, advanced settings for power users'],
     },
     {
       date: '2026 Q3+',
