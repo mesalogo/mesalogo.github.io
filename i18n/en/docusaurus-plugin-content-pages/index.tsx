@@ -241,7 +241,7 @@ function HomepageTimeline() {
       date: '2026 Q2',
       title: 'ODM Framework',
       icon: '🏛️',
-      items: ['ABM-standard Organization Design Model with 4 composable dimensions', 'Visual org-chart editor with slot-based role binding', 'Pre-built model templates: Three Departments, State Council, Separation of Powers, Corporate, Debate', 'One-click template → bind roles → run, advanced settings for power users'],
+      items: ['ABM-standard Organization Design Model with 4 composable dimensions', 'Visual org-chart editor with slot-based role binding'],
     },
     {
       date: '2026 Q3+',
